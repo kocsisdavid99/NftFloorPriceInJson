@@ -7,14 +7,14 @@
     $result = mysqli_query($connection, $sql) or die("Error in Selecting " . mysqli_error($connection));
 
     //create an array
-    $emparray = array();
+    $nftarray = array();
     while($row =mysqli_fetch_assoc($result))
     {
-        $emparray[] = $row;
+        $nftarray[] = $row;
     }
 header('Content-Type: application/json');
 
-    echo json_encode($emparray, JSON_PRETTY_PRINT);
+    echo json_encode($nftarray, JSON_PRETTY_PRINT);
 
     //close the db connection
     mysqli_close($connection);
